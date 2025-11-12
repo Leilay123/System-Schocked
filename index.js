@@ -11,11 +11,13 @@ function addNewTweets() {
   const $tweets = streams.home.map((tweet) => {
   const $tweet = $('<div class="tweet"></div>');
 
-    // adds the username and message
+    // // adds the username and message
+    
     const $user = $(`<span class="user">@${tweet.user}</span>`);
     const $message = $(`<span class="message">${tweet.message}</span>`);
 
     // Create timestamp with Moment.js
+
     const $timestamp = $('<div class="timestamp"></div>');
     $timestamp.text(moment(tweet.timestamp).format('MMMM Do YYYY, h:mm:ss a'));
 
