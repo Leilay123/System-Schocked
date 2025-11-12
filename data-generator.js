@@ -148,7 +148,7 @@ scheduleNextTweet();
 // Utility function for letting students add "write a tweet" functionality
 // (NOTE: Not used by the rest of this file.)
 const writeTweet = (message) => {
-  const visitor = window.visitor;
+  const visitor = window.visitor; //<- user name need to be the windows
 
   if (!visitor) {
     throw new Error('Set the global visitor property!');
