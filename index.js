@@ -19,12 +19,18 @@ function addNewTweets() {
   // create and prepend tweet elements
   const $tweets = newTweets.map(tweet => {
     const $tweet = $('<div class="tweet"></div>');
+
     const $user = $(`<span class="user">@${tweet.user}</span>`);
+
     const $message = $(`<span class="message">${tweet.message}</span>`);
+
     const $timestamp = $('<div class="timestamp"></div>');
     $timestamp.text(moment(tweet.timestamp).format('MMMM Do YYYY, h:mm:ss a'));
 
-    $tweet.append($user, ': ', $message, $timestamp);
+    const $humanFriendlyTimestamp = $('<div class="humanFriendlyTimestamp"></div>');
+    $humanFriendlyTimestamp.text(moment(tweet.timestamp).fromNow());
+
+    $tweet.append($user, ': ', $message, $timestamp, $humanFriendlyTimestamp);
     return $tweet;
   });
 
