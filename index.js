@@ -31,6 +31,8 @@ const $user = $(`<span class="username">@${tweet.user}</span>`);
     const $humanFriendlyTimestamp = $('<div class="humanFriendlyTimestamp"></div>');
     $humanFriendlyTimestamp.text(moment(tweet.timestamp).fromNow());
 
+   
+
     // making it so when you click on a username, it shows only their tweets
 
       let currentUserFilter = null; // to keep track of the current user filter
@@ -45,7 +47,22 @@ const $user = $(`<span class="username">@${tweet.user}</span>`);
     return user === tweet.user;
   });
 
-  $tweetsDiv.empty().append($filteredTweets);
+ // auto generating new tweets because I think it'll be neat
+  function scheduleNextTweet() {
+  generateNewTweet();
+
+  // schedule next tweet between 1 second and 3.5 seconds 
+  const nextTime = Math.random() * 2500 + 1000;
+  setTimeout(scheduleNextTweet, nextTime);
+}
+
+// start generating tweets automatically
+scheduleNextTweet();
+    $tweetsDiv.empty().append($filteredTweets);
+});
+
+$('#new-tweets-button').on('click', () => {
+  addNewTweets();   // <-- this already prepends tweets to the top
 });
 
 
@@ -107,6 +124,12 @@ $newTweetForm.on('submit', (event) => {
   addNewTweets();   // or whatever your update function is named
 });
 
+    // I think I want to have the new tweets to generate automatically
+    // like every 10 seconds or so
+    // also have a way to control the speed of new tweet generation
+    // like a slider or something
+
+
    // Create and attach the refresh button
 
    // When clicked, add only new tweets, this button generates new tweets when clicked
@@ -128,7 +151,20 @@ $refreshButton.on('click', () => {
   }
 });
 
-    // need a way to return to the full tweet list, it shoudldn't remove old the tweets though
+    // ---- Generate a single new tweet (required by tests) ----
+function generateNewTweet() {
+  const randomUser = Object.keys(streams.users)[
+    Math.floor(Math.random() * Object.keys(streams.users).length)
+  ];
 
+  const newTweet = {
+    user: randomUser,
+    message: Math.random().toString(36).slice(2),
+    timestamp: new Date()
+  };
+
+  streams.home.push(newTweet);
+  streams.users[randomUser].push(newTweet);
+}
 
 })
