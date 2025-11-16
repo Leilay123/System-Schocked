@@ -1,3 +1,13 @@
+
+// This code is BOTCHED and I'm aware of that 
+// I been trying to redo it for the whole day
+// I lowkey give up, I should of made each test into seprate functions but I didn't and when I try to do it everything breaks
+// I'm just going to make it pretty and like... 
+// all the tests are passing so... yea...
+
+// what theme should I do?
+// maybe a broken robot theme...
+
 $(() => {
   const $page = $('#all-contents');
 
@@ -150,6 +160,9 @@ $refreshButton.on('click', () => {
     addNewTweets(newTweets);
   }
 });
+
+
+
 
     // ---- Generate a single new tweet (required by tests) ----
 function generateNewTweet() {
