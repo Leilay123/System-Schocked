@@ -93,7 +93,11 @@ scheduleNextTweet();
   <textarea id="message-input" class="new-tweet-message" placeholder="Wh4t'5 wr0ng th1s t1m3?" required></textarea>
   <br/>
   <input type="submit" value="5ubm1t y0ur 3rr0r">
-</form>
+
+</form>   
+
+<button id="new-tweets-button">G3n3r4t3 N3w Pr0bl3m5</button> // sure there was a neater way to do this whatever
+
 `);
 $newTweetForm.on('submit', (event) => {
   event.preventDefault();
@@ -119,7 +123,6 @@ $newTweetForm.on('submit', (event) => {
     addNewTweets();
   }
 });
-
   
   $page.prepend($newTweetForm);
 
