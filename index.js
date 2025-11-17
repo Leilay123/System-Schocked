@@ -71,10 +71,6 @@ scheduleNextTweet();
     $tweetsDiv.empty().append($filteredTweets);
 });
 
-$('#new-tweets-button').on('click', () => {
-  addNewTweets();   // <-- this already prepends tweets to the top
-});
-
 
     $tweet.append($user, ': ', $message, $timestamp, $humanFriendlyTimestamp);
 
@@ -92,11 +88,11 @@ $('#new-tweets-button').on('click', () => {
 
  const $newTweetForm = $(`
 <form class="new-tweet-form">
-  <input id="username-input" type="text" class="new-tweet-user" placeholder="Your username" required />
+  <input id="username-input" type="text" class="new-tweet-user" placeholder="3rr0r typ3" required />
   <br/>
-  <textarea id="message-input" class="new-tweet-message" placeholder="What's happening?" required></textarea>
+  <textarea id="message-input" class="new-tweet-message" placeholder="Wh4t'5 wr0ng th1s t1m3?" required></textarea>
   <br/>
-  <input type="submit" value="Tweet">
+  <input type="submit" value="5ubm1t y0ur 3rr0r">
 </form>
 `);
 $newTweetForm.on('submit', (event) => {
@@ -145,7 +141,7 @@ $newTweetForm.on('submit', (event) => {
    // When clicked, add only new tweets, this button generates new tweets when clicked
       // if a username was clicked, it will only show tweets from that user and new tweets from that user as well
       // basically only generate new tweets for the user being viewed
-const $refreshButton = $('<button class="refresh-button">Show more tweets</button>');
+const $refreshButton = $('<button class="refresh-button">The useless button</button>');
 $page.prepend($refreshButton);
 
 $refreshButton.on('click', () => {

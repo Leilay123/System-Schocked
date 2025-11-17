@@ -1,3 +1,10 @@
+<!-- Broken robot theme for a broken site-->
+<!-- Title? System Shocked-->
+
+<!-- How do I add a background? Is that in style or just in head? -->
+<!-- should I add a music player? I always add music players to my tumbr pages, Need to make a playlist tho-->
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,7 +18,7 @@
       rel="stylesheet"
     />
 
-    <title>Twiddler!</title>
+    <title>Syst3m Sh0ck3d!</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="data-generator.js"></script>
     <script src="index.js"></script>
@@ -31,13 +38,40 @@
           color-scheme: dark;
         }
       }
+        .background {
+          background-image: url('https://gcdnb.pbrd.co/images/8P5NCDTAP7ip.gif?o=1');
+          background-position: center;
+          background-size: cover;
+          overflow: hidden;
+          height: 100vh;
+        }
+      /* There's so many different kinds of comments types omgs */
+      /* Want an backbround behind the tweets to make it easier to see*/
+      
+      /* */
+        .tweet {
+            background-image: url("https://i.imgflip.com/54hu0d.png");
+            background-size: cover;
+            background-position: center;
+            padding: 12px 16px;
+             border-radius: 10px;
+            margin-bottom: 10px;
+            color: black; /* ensures readability */
+        }
+     
+        /*music player time*/
+        /*I normal just use a template website for it for tumblr, looks like I gotta try to create one :D */
+        /*Only doing looking up a yt this is a lot of work omg*/
+      
     </style>
   </head>
   <body>
+      <div class="background">
 
     <button id="new-tweets-button">Show New Tweets</button>
 
     <div id="all-contents"></div>
 
+      </div>
   </body>
 </html>
