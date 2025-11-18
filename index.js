@@ -144,7 +144,7 @@ $newTweetForm.on('submit', (event) => {
    // When clicked, add only new tweets, this button generates new tweets when clicked
       // if a username was clicked, it will only show tweets from that user and new tweets from that user as well
       // basically only generate new tweets for the user being viewed
-const $refreshButton = $('<button class="refresh-button">The useless button</button>');
+const $refreshButton = $('<button class="refresh-button">!!BR0K3N 3RR0R!!</button>');
 $page.prepend($refreshButton);
 
 $refreshButton.on('click', () => {
